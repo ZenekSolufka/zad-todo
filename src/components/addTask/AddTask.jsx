@@ -2,27 +2,25 @@
 import { useState } from "react";
 import './AddTask.css'
 const AddTask = ({ addTask }) => {
-  const [text, setText] = useState("");
+  
+  const [text, setText] = useState("")
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (!text.trim()) return;
-    addTask(text);
-    setText("");
-  };
+    addTask(text)
+    setText('')
+  }
 
   return (
-    <form onSubmit={handleSubmit} className="task-form">
-      <input
-        type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="Dodaj zadanie"
-        className="task-input"
+    <form onSubmit={handleSubmit}>
+      <input 
+      type="text" 
+      value={text}
+      onChange={(e) => setText(e.target.value)}
+      placeholder="Wpisz treść zadania"
       />
-      <button type="submit" className="task-button">
-        Dodaj
-      </button>
+      <button type="submit">Dodaj zadanie</button>
     </form>
   );
 };
