@@ -1,15 +1,13 @@
 import './TaskItem.css'
 
-const TaskItem = ({ task, toggleTask, removeTask }) => {
+const TaskItem = ({ task, removeTask, toggleTask }) => {
   return (
-    <div className="task-item">
+    <div className='task-item'>
       <span
-        onClick={() => toggleTask(task.id)}
-        className={`task-text ${task.completed ? "completed" : ""}`}
-      >
-        {task.text}
-      </span>
-      <button onClick={() => removeTask(task.id)} className="delete-button">Usuń</button>
+      onClick={toggleTask}
+      className={`'task-text', ${task.completed ? "completed" : ""}` }
+      >{task.text}</span>
+      <button className='delete-button' onClick={() => removeTask(task.id)} >USUŃ</button>
     </div>
   );
 };

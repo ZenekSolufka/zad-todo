@@ -3,26 +3,29 @@ import './App.css'
 import {useState} from 'react'
 
 const App = () => {
+  
   const [tasks, setTasks] = useState([]);
 
   const addTask = (text) => {
     const newTask = {
-      id: Date.now(), 
-      text, 
-      completed: false 
-    };
-    setTasks([...tasks, newTask]);
-  };
+      id: Date.now(),
+      text,
+      completed: false
+    }
+    setTasks([...tasks, newTask])
+  }
 
-  const toggleTask = (id) => {
-    setTasks(tasks.map((task) => (
-      task.id === id ? 
-      { ...task, completed: !task.completed } : task)));
-  };
+    const toggleTask = (id) => {
+      {tasks.map((task) =>(
+        task.id === id ? { ...task, completed: !task.completed } : task
+      ))}
+    }
 
-  const removeTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
-  };
+    const removeTask = (id) => {
+      setTasks(tasks.filter((task) => task.id != id)
+      )
+      
+    }
 
   return (
     <div className="app-container">
