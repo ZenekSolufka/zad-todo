@@ -11,14 +11,17 @@ const AddTask = ({ addTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="task-form" onSubmit={handleSubmit}>
       <input
+        className="task-input"
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Wpisz treść zadania"
       />
-      <button type="submit">Dodaj zadanie</button>
+      <button className="task-button" type="submit">
+        Dodaj zadanie
+      </button>
     </form>
   );
 };

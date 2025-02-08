@@ -4,8 +4,8 @@ const TaskItem = ({ task, removeTask, toggleTask }) => {
   return (
     <div className="task-item">
       <span
-        onClick={toggleTask}
-        className={`'task-text', ${task.completed ? "completed" : ""}`}
+        onClick={() => toggleTask(task.id)}
+        className={`task-text ${task.completed ? "completed" : ""}`}
       >
         {task.text}
       </span>
